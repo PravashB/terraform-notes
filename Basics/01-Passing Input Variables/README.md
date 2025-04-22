@@ -78,5 +78,43 @@ NOTES:
 - Great for teams using Terraform Cloud.
 
 ----------------------------------------------------------------------------------------------------
+Order of Precedence
+
+Now, we know that Terraform allows us to set variable values from multiple sources. However, When the same variable is defined in multiple places, Terraform follows a strict Order of Precedence to assign values to the variables.
+
+Let's take an example.
+We've a main.tf configuration file with a single resource.
+
+![alt text](image-13.png)
+
+The above will create a local file based on the variable filename in the local folder.
+In the variables.tf file, we have not declared the default for this variable.
+
+![alt text](image-14.png)
+
+However, we have assigned different values to this variable in Multiple ways:
+
+1. Environment Variable:
+
+$ export TF_VAR_filename="/pravash.txt"
+
+2. terraform.tfvars File:
+
+filename = "/Pro.txt"
+
+3. File Ending with .auto.tfvars:
+
+filename = "/Liza.txt"
+
+4. Command-Line Flag:
+
+$ terraform apply -var "filename=/Pravash-Behera.txt"
+
+The Question is Which one of the values will be accepted?
+Terraform follows a Variable Definition Precedence to determine this.
+
+![alt text](image-15.png)
+
+----------------------------------------------------------------------------------------------------
 Prepared by: Pravash Behera
 Last updated: April 2025
