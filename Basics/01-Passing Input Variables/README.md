@@ -77,3 +77,7 @@ Usage:
 NOTES:
 - Useful for secure and shared environments.
 - Great for teams using Terraform Cloud.
+
+----------------------------------------------------------------------------------------------------
+Prepared by: Pravash Behera
+Last updated: April 2025
