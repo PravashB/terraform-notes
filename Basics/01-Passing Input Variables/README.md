@@ -57,7 +57,7 @@ Now, a 'terraform apply' will load these values to the file.
 
 NOTE: Terraform automatically loads files if they are named:
 
-<img width="1078" alt="image" src="https://github.com/user-attachments/assets/b87ceedb-1a3d-4441-8f6c-d7175318382c" />
+![alt text](image-12.png)
 
 
 However, if the filename is a differently named file like 'variables.tfvars', be sure to specify it explicitly with the -var-file flag:
