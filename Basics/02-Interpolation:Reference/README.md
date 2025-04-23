@@ -20,3 +20,16 @@ Now, In order to show the value in the local_file resource, we're going to call 
 The interpolation sequence (${...}) converts the evaluated expression into a string and dynamically inserts the password into the file content.
 
 ![alt text](image-2.png)
+
+====================================================================================================
+RESOURCE DEPENDENCIES
+
+Implicit Dependency:
+Terraform automatically detects implicit dependencies through reference expressions. For example, when we pass the output of one resource (like a random password) to another resource (such as a local file), Terraform understands that the random password must be created before the local file. Similarly, during deletion, Terraform removes the resources in reverse order to maintain consistency. (First local file then random password)
+
+![alt text](image-3.png)
+
+Explicit Dependency:
+In some scenarios, a resource might indirectly rely on another resource without any direct reference. In these cases, we can explicitly specify the dependency using the depends_on argument. This method ensures that Terraform provisions and destroys resources in the intended order.
+
+![alt text](image-4.png)
