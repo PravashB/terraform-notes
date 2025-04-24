@@ -70,3 +70,4 @@ Now that the configuration file and the state file are in sync, any subsequent r
 Conclusion
 
 In this lesson, we explored how Terraform leverages a state file—initially created during the first successful apply—to track and manage real-world infrastructure. This state file serves as the authoritative record for your resources and is essential for Terraform to efficiently plan and apply configuration changes.
+
