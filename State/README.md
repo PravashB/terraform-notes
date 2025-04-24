@@ -75,7 +75,9 @@ In this lesson, we explored how Terraform leverages a state file—initially cre
 
 ![alt text](image-13.png)
 
-Managing Resource Dependencies:
+BENEFITS OF TERRAFORM
+
+1. Managing Resource Dependencies:
 
 Terraform supports two types of dependencies: implicit and explicit. Consider the following example configuration that provisions three resources:
 
@@ -95,7 +97,7 @@ Below is an excerpt from a state file that shows the metadata for the local_file
 
 ![alt text](image-16.png)
 
-Performance Gains with State Caching:
+2. Performance Gains with State Caching:
 
 For small infrastructures, Terraform actively reconciles state with the real infrastructure on every command, such as plan or apply. However, in production environments where you might manage hundreds or thousands of resources, constantly fetching the state from providers would lead to delays.
 
@@ -111,7 +113,7 @@ When running a plan with the cached state:
 
 ![alt text](image-19.png)
 
-Enhancing Team Collaboration with Remote State Storage:
+3. Enhancing Team Collaboration with Remote State Storage:
 
 For individual projects, storing the terraform.tfstate file locally works well. However, in team environments, having an up-to-date and consistent state file is critical to avoid unpredictable errors. A remote backend—such as AWS S3, Terraform Cloud, or HashiCorp’s Console—ensures that every team member accesses the latest state.
 
